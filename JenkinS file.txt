@@ -1,0 +1,32 @@
+Support document to install jenkins:
+
+Step 1:
+
+Create a nano file
+
+example:
+
+sudo nano install.sh
+
+paste the below command in the nano file.
+
+----------------------------------------------
+sudo apt-get update
+sudo apt-get install openjdk-11-jdk -y
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins -y
+----------------------------------------------
+
+Run the file with command with the below command.
+
+bash install.sh
+
+copy public ip of your master instance and paste it on your browser with :8080
+ex: 123.34.67:8080
+jenkins dasbord will apear
+
